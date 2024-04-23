@@ -1,1 +1,96 @@
-<p>create-note works!</p>
+<section class="container create-thought ff-inter">
+  <header class="header">
+    <h2>Stack a new thought</h2>
+  </header>
+
+  <form>
+    <label for="thought">Thought</label>
+    <textarea class="input" id="thought" placeholder="Type your thought"></textarea>
+    <label for="author">Author</label>
+    <input type=text class="input" id="author" placeholder="Author or reference">
+
+
+    <!--      MODEL ONE-->
+
+    <label for="model"> Select the design of the card</label>
+    <div class="container-radio">
+      <div class="radio-modelo">
+        <label for="modelo1">
+          <input
+            type="radio"
+            id="modelo1"
+            value="modelo1"
+            name="modelo-card"
+          >
+          <div class="custom-radio">
+            <span></span>
+          </div>
+          <span>Modelo 1</span>
+        </label>
+        Preview
+        <div class="model model1 ff-roboto-mono">
+          <img src="assets/imgs/modelo1.png" alt=" Dark Blue quotations">
+          <p class="conteudo">here goes the content</p>
+          <p class="autoria">here goes the content</p>
+        </div>
+      </div>
+
+<!--      MODEL TWO-->
+
+      <div class="container-radio">
+        <div class="radio-modelo">
+          <label for="modelo2">
+            <input
+              type="radio"
+              id="modelo2"
+              value="modelo2"
+              name="modelo-card"
+            >
+            <div class="custom-radio">
+              <span></span>
+            </div>
+            <span>Modelo 2</span>
+          </label>
+          Preview
+          <div class="model model1 ff-roboto-mono">
+            <img src="assets/imgs/modelo2.png" alt="Blue quotations">
+            <p class="conteudo">here goes the content</p>
+            <p class="autoria">here goes the content</p>
+          </div>
+        </div>
+      </div>
+
+
+      <!--      MODEL THREE-->
+
+
+      <div class="container-radio">
+        <div class="radio-modelo">
+          <label for="modelo3">
+            <input
+              type="radio"
+              id="modelo3"
+              value="modelo3"
+              name="modelo-card"
+            >
+            <div class="custom-radio">
+              <span></span>
+            </div>
+            <span>Modelo 3</span>
+          </label>
+          Preview
+          <div class="model model3 ff-roboto-mono">
+            <img src="assets/imgs/modelo3.png" alt="Green quotations">
+            <p class="conteudo">here goes the content</p>
+            <p class="autoria">here goes the content</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="action">
+      <button class="botao">Stack my thought</button>
+      <button class="botao">Cancel</button>
+    </div>
+  </form>
+
+</section>
