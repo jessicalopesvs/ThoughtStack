@@ -9,7 +9,7 @@
               id="thought"
               placeholder="Type your thought"
               name="thought"
-              [(ngModel)]="content.thought">
+              [(ngModel)]="thought.content">
 
     </textarea>
 
@@ -19,7 +19,7 @@
       id="author"
       name="author"
       placeholder="Digite a autoria ou fonte"
-      [(ngModel)]="content.author"
+      [(ngModel)]="thought.author"
     >
 
 
@@ -34,7 +34,7 @@
             id="modelo1"
             value="modelo1"
             name="modelo-card"
-            [(ngModel)]="content.modelo"
+            [(ngModel)]="thought.model"
           >
           <div class="custom-radio">
             <span></span>
@@ -44,8 +44,8 @@
         Preview
         <div class="model model1 ff-roboto-mono">
           <img src="assets/imgs/modelo1.png" alt=" Dark Blue quotations">
-          <p class="conteudo">{{ content.thought }}</p>
-          <p class="autoria">{{content.author}}</p>
+          <p class="conteudo">{{ thought.content }}</p>
+          <p class="autoria">{{thought.author}}</p>
         </div>
       </div>
 
@@ -59,7 +59,7 @@
               id="modelo2"
               value="modelo2"
               name="modelo-card"
-              [(ngModel)]="content.modelo"
+              [(ngModel)]="thought.model"
             >
             <div class="custom-radio">
               <span></span>
@@ -69,8 +69,8 @@
           Preview
           <div class="model model1 ff-roboto-mono">
             <img src="assets/imgs/modelo2.png" alt="Blue quotations">
-            <p class="conteudo">{{ content.thought }}</p>
-            <p class="autoria">{{content.author}}</p>
+            <p class="conteudo">{{ thought.content }}</p>
+            <p class="autoria">{{thought.author}}</p>
           </div>
         </div>
       </div>
@@ -87,7 +87,7 @@
               id="modelo3"
               value="modelo3"
               name="modelo-card"
-              [(ngModel)]="content.modelo"
+              [(ngModel)]="thought.model"
             >
             <div class="custom-radio">
               <span></span>
@@ -97,15 +97,15 @@
           Preview
           <div class="model model3 ff-roboto-mono">
             <img src="assets/imgs/modelo3.png" alt="Green quotations">
-            <p class="conteudo">{{ content.thought }}</p>
-            <p class="autoria">{{content.author}}</p>
+            <p class="conteudo">{{ thought.content }}</p>
+            <p class="autoria">{{thought.author}}</p>
           </div>
         </div>
       </div>
     </div>
     <div class="action">
       <button (click)="createTought()" class="botao">Stack my thought</button>
-      <button (click)="cancelCreateThought()" routerLink="/list-toughts" class="botao">Back</button>
+      <button (click)="cancelCreateThought()"  class="botao">Back</button>
     </div>
   </form>
 

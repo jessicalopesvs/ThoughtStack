@@ -2,7 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {FormsModule} from "@angular/forms"
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {RouterLink} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
+import {Thought} from "../thought";
+import {ThoughtsService} from "../thoughts.service";
 
 
 @Component({
@@ -17,21 +19,28 @@ import {RouterLink} from "@angular/router";
 })
 export class CreateNoteComponent implements OnInit{
 
-  content ={
-    id:'1,',
-    thought:"Learning angular",
+  thought : Thought ={
+
+    content:"Learning angular",
     author:'Jessica Lopes',
-    modelo:'modelo1'
+    model:'modelo1'
+  }
+
+
+  constructor(private service: ThoughtsService,
+              private router : Router) {
+
   }
 
   ngOnInit(): void {
   }
 
   createTought() {
-
+    this.service.create(this.thought).subscribe(() =>
+    this.router.navigate(['/list-toughts']))
   }
 
   cancelCreateThought() {
-
+    this.router.navigate(['/list-toughts'])
   }
 }
