@@ -21,7 +21,7 @@ footer {
 }
 
 footer small {
-  color: white;
+  color: black;
 }
 
 @media (max-width: 576px) {
