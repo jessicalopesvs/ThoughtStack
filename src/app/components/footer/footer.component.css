@@ -1,5 +1,7 @@
 footer {
-  background-image: url(/assets/imgs/fundo-rodape.png);
+  /*background-image: url(/assets/imgs/fundo-rodape.png);*/
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(247,216,255,1) 13%, rgba(250,195,255,1) 26%, rgba(216,143,255,1) 49%, rgba(255,184,245,1) 68%, rgba(247,216,255,1) 86%, rgba(255,255,255,1) 100%);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;

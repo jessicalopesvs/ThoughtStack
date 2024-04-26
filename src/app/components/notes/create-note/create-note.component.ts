@@ -1,10 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {FormsModule} from "@angular/forms"
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms"
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 import {Router, RouterLink} from "@angular/router";
 import {Thought} from "../thought";
 import {ThoughtsService} from "../thoughts.service";
+import {NgIf} from "@angular/common";
 
 
 @Component({
@@ -12,32 +13,44 @@ import {ThoughtsService} from "../thoughts.service";
   standalone: true,
   imports: [
     FormsModule,
-    RouterLink
+    RouterLink,
+    ReactiveFormsModule,
+    NgIf
   ],
   templateUrl: './create-note.component.html',
   styleUrl: './create-note.component.css'
 })
-export class CreateNoteComponent implements OnInit{
+export class CreateNoteComponent implements OnInit {
 
-  thought : Thought ={
 
-    content:"Learning angular",
-    author:'Jessica Lopes',
-    model:'modelo1'
-  }
+  form!: FormGroup;
 
 
   constructor(private service: ThoughtsService,
-              private router : Router) {
+              private router: Router,
+              private builder: FormBuilder) {
 
   }
 
   ngOnInit(): void {
+
+    this.form = this.builder.group({
+      content: ['', Validators.compose([
+        Validators.required,
+        Validators.pattern(/(.|\s)*\S(.|\s)*/)])],
+      author: ['', Validators.compose([
+        Validators.required,
+        Validators.minLength(3)])],
+      model: ['model1']
+    })
   }
 
   createTought() {
-    this.service.create(this.thought).subscribe(() =>
-    this.router.navigate(['/list-toughts']))
+    console.log(this.form.get('author')?.errors)
+    if (this.form.valid) {
+      this.service.create(this.form.value).subscribe(() =>
+        this.router.navigate(['/list-toughts']))
+    }
   }
 
   cancelCreateThought() {

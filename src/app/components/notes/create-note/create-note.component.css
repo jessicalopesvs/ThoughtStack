@@ -16,7 +16,7 @@
 }
 
 .create-thought  form {
-  background: #C4EDFF;
+  background: #c7a4fc;
 
   border: none;
   border-radius: 20px;
@@ -28,7 +28,7 @@
 }
 
 .create-thought  form label {
-  color: #154580;
+  color: #3a0884;
   font-weight: bold;
   margin: 0 0 1rem;
 }
@@ -83,15 +83,15 @@
 }
 
 .model1 {
-  box-shadow: 8px 8px 0px #154580;
+  box-shadow: 8px 8px 0px #3a0884;
 }
 
 .model2 {
-  box-shadow: 8px 8px 0px #6BD1FF;
+  box-shadow: 8px 8px 0px #7928f3;
 }
 
 .model3 {
-  box-shadow: 8px 8px 0px #84EEC1;
+  box-shadow: 8px 8px 0px #8e51ea;
 }
 
 input[type='radio'] {
@@ -105,7 +105,7 @@ input[type='radio'] {
 }
 
 .custom-radio {
-  border: 1px solid #154580;
+  border: 1px solid #3a0884;
   width: 30px;
   height: 30px;
   display: grid;
@@ -116,7 +116,7 @@ input[type='radio'] {
 .custom-radio,
 span {
   transition: 0.5s ease;
-  color: #154580;
+  color: #3a0884;
 }
 
 .custom-radio span {
@@ -128,9 +128,17 @@ span {
 }
 
 input[type='radio']:checked+.custom-radio {
-  border-color: #154580;
+  border-color: #3a0884;
 }
 
 input[type='radio']:checked+.custom-radio span {
-  background: #154580;
+  background: #3a0884;
+}
+
+.mensage__error {
+  font-size: 12px;
+  margin-left: 5px;
+  color: red;
+  margin-top: -25px;
+  margin-bottom: 20px;
 }
